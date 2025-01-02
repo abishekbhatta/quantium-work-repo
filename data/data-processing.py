@@ -12,7 +12,7 @@ def processing(csv_file):
         for row in csv_reader:
             food = row[0]
             if food == 'pink morsel':
-                sales = int(float(row[1].strip('$'))) * int(row[2])
+                sales = float(row[1].strip('$')) * int(row[2])
                 date = row[3]
                 region = row[4]
                 csv_writer.writerow([sales, date, region])
