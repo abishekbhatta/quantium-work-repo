@@ -1,2 +1,2 @@
-# Quantium repo
-This repo contains everything you need to get started on the program! Good luck!
+# Quantium Repo
+This repo contains everything you need to get started. Good luck!
