@@ -1,17 +1,42 @@
-html{
-    font-size: 62.5%;
-}
-
 #line-graph{
-    margin: 50px 0 0 0;
-    height: 80vh;
-}
-
-#radio-buttons{
-    display: flex;
-    gap: 20px;
     position: absolute;
-    top: 90%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+}
+#radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    position: absolute;
+    top: 80%;
     left: 50%;
     transform: translate(-50%);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease;
+}
+
+label:hover {
+    background-color: #dcdcdc;
+}
+
+input:focus{
+    background-color: #dcdcdc;
 }

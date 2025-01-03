@@ -11,12 +11,20 @@ df = pd.read_csv('processed-data.csv')
 
 #create visualization
 app.layout = html.Div(id='wrapper', children=[
-    dcc.RadioItems(
-        id='radio-buttons',
-        options=['East', 'West', 'North', 'South', 'All'],
-        value = 'All',
-    ),
-
+    html.Div(id='radio-wrapper', children=[
+        dcc.RadioItems(
+            id='radio-buttons',
+            options=[
+                {'label': 'East', 'value': 'East'},
+                {'label': 'West', 'value': 'West'},
+                {'label': 'North', 'value': 'North'},
+                {'label': 'South', 'value': 'South'},
+                {'label': 'All', 'value': 'All'}
+            ],
+            value='All',
+            labelStyle={'display': 'inline-block'}
+        )
+    ]),
     dcc.Graph(id='line-graph')
 ])
 
@@ -34,7 +42,7 @@ def update_graph(input_value):
         filtered_df = df[df['region'] == input_value.lower()]
         figure = px.line(filtered_df, x="date", y="sales")
 
-    figure.update_layout(xaxis_title='transaction-date', yaxis_title='sales of pink morsel')
+    figure.update_layout(xaxis_title=f'transaction-date ({input_value})', yaxis_title='sales of pink morsel')
     return figure
 
 
