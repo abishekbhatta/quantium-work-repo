@@ -36,7 +36,3 @@ label {
 label:hover {
     background-color: #dcdcdc;
 }
-
-input:focus{
-    background-color: #dcdcdc;
-}
