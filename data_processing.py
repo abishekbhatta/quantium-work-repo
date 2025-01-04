@@ -24,9 +24,6 @@ def processing(csv_file):
                 csv_writer.writerow([sales, date, region])
 
 
-processing('data/daily_sales_data_0.csv')
-processing('data/daily_sales_data_1.csv')
-processing('data/daily_sales_data_2.csv')
 
 
 
