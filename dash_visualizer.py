@@ -34,17 +34,17 @@ app.layout = html.Div(id='wrapper', children=[
     Output(component_id='line-graph', component_property='figure'),
     Input(component_id='radio-buttons', component_property='value')
 )
+
 def update_graph(input_value):
     figure = px.line(df, x="date", y="sales")
     
     #checks the region and filters dataframe accordingly
-    if input_value != 'All':
+    if input_value.lower() != 'all':
         filtered_df = df[df['region'] == input_value.lower()]
         figure = px.line(filtered_df, x="date", y="sales")
 
     figure.update_layout(xaxis_title=f'transaction-date ({input_value})', yaxis_title='total sales')
     return figure
-
 
 if __name__ == '__main__':
     app.run_server()
