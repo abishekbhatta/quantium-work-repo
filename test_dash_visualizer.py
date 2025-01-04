@@ -15,3 +15,5 @@ def test_visualiation_loads(dash_duo):
 def test_picker_loads(dash_duo):
     dash_duo.start_server(app)
     dash_duo.wait_for_element("#radio-buttons", timeout=10)
+
+
