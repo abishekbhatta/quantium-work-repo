@@ -1,6 +1,5 @@
 from dash_visualizer import app
 
-
 #test whether header is present 
 def test_header_loads(dash_duo):
     dash_duo.start_server(app)
